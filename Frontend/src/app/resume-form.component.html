@@ -1,0 +1,103 @@
+<div class="container">
+  <h2>Enter Resume Details</h2>
+
+  <div class="card">
+    <label>Name</label>
+    <input type="text" [(ngModel)]="resumeData.details.name" name="name">
+
+    <label>Title</label>
+    <input type="text" [(ngModel)]="resumeData.details.title" name="title">
+
+    <label>Summary</label>
+    <textarea [(ngModel)]="resumeData.details.summary" name="summary"></textarea>
+
+    <label>Phone</label>
+    <input type="text" [(ngModel)]="resumeData.details.phone" name="phone">
+
+    <label>Email</label>
+    <input type="email" [(ngModel)]="resumeData.details.email" name="email">
+
+    <label>Address</label>
+    <textarea [(ngModel)]="resumeData.details.address" name="address"></textarea>
+
+    <label>Skills</label>
+    <textarea [(ngModel)]="resumeData.details.skills" name="skills"></textarea>
+
+    <label>Languages</label>
+    <textarea [(ngModel)]="resumeData.details.languages" name="languages"></textarea>
+
+    <label>Personality Traits</label>
+    <textarea [(ngModel)]="resumeData.details.personality_traits" name="personality_traits"></textarea>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="card">
+    <h3>Degree 1</h3>
+    <label>Degree</label>
+    <input type="text" [(ngModel)]="resumeData.education[0].degree" name="degree1">
+
+    <label>Institute</label>
+    <input type="text" [(ngModel)]="resumeData.education[0].institute" name="institute1">
+
+    <label>Year</label>
+    <input type="text" [(ngModel)]="resumeData.education[0].year" name="year1">
+
+    <label>Score</label>
+    <input type="text" [(ngModel)]="resumeData.education[0].score" name="score1">
+  </div>
+
+  <div class="card">
+    <h3>Degree 2</h3>
+    <label>Degree</label>
+    <input type="text" [(ngModel)]="resumeData.education[1].degree" name="degree2">
+
+    <label>Institute</label>
+    <input type="text" [(ngModel)]="resumeData.education[1].institute" name="institute2">
+
+    <label>Year</label>
+    <input type="text" [(ngModel)]="resumeData.education[1].year" name="year2">
+
+    <label>Score</label>
+    <input type="text" [(ngModel)]="resumeData.education[1].score" name="score2">
+  </div>
+
+  <div class="card">
+    <h3>Degree 3</h3>
+    <label>Degree</label>
+    <input type="text" [(ngModel)]="resumeData.education[2].degree" name="degree3">
+
+    <label>Institute</label>
+    <input type="text" [(ngModel)]="resumeData.education[2].institute" name="institute3">
+
+    <label>Year</label>
+    <input type="text" [(ngModel)]="resumeData.education[2].year" name="year3">
+
+    <label>Score</label>
+    <input type="text" [(ngModel)]="resumeData.education[2].score" name="score3">
+  </div>
+
+  <h2>Projects</h2>
+
+  <div class="card">
+    <h3>Project 1</h3>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="resumeData.projects[0].title" name="projectTitle1">
+
+    <label>Description</label>
+    <textarea [(ngModel)]="resumeData.projects[0].description" name="projectDesc1"></textarea>
+  </div>
+
+  <div class="card">
+    <h3>Project 2</h3>
+    <label>Title</label>
+    <input type="text" [(ngModel)]="resumeData.projects[1].title" name="projectTitle2">
+
+    <label>Description</label>
+    <textarea [(ngModel)]="resumeData.projects[1].description" name="projectDesc2"></textarea>
+  </div>
+
+  <div class="button-group">
+    <button type="button" (click)="saveResume()">Save Resume</button>
+  </div>
+</div>

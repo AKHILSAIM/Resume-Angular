@@ -1,0 +1,68 @@
+<div *ngIf="fetchedResume" class="resume-page">
+  <div class="resume-container">
+    
+    <div class="left-column">
+      <div class="contact-section">
+        <p>{{ fetchedResume.details.phone }}</p>
+        <p>{{ fetchedResume.details.email }}</p>
+        <p>{{ fetchedResume.details.address }}</p>
+      </div>
+
+      <div class="section">
+        <h3>Education</h3>
+        <div *ngFor="let edu of fetchedResume.education" class="education-item">
+          <p class="degree">{{ edu.degree }}</p>
+          <p>{{ edu.institute }}</p>
+          <p>{{ edu.year }}</p>
+          <p>{{ edu.score }}</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Expertise</h3>
+        <ul>
+          <li *ngFor="let skill of getSkillsArray()">{{ skill }}</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Language</h3>
+        <ul>
+          <li *ngFor="let language of getLanguagesArray()">{{ language }}</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>Personality Traits</h3>
+        <ul>
+          <li *ngFor="let trait of getTraitsArray()">{{ trait }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <div class="header-section">
+        <h1>{{ fetchedResume.details.name }}</h1>
+        <h2>{{ fetchedResume.details.title }}</h2>
+      </div>
+
+      <div class="summary-section">
+        <p>{{ fetchedResume.details.summary }}</p>
+      </div>
+
+      <div class="projects-section">
+        <h3>Academic Projects</h3>
+
+        <div *ngFor="let project of fetchedResume.projects" class="project-item">
+          <h4>{{ project.title }}</h4>
+          <p>{{ project.description }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="!fetchedResume" class="empty-message">
+  No resume data found.
+</div>
