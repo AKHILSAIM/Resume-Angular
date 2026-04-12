@@ -73,7 +73,10 @@ app.post('/api/resume', async (req, res) => {
   } catch (error) {
     await connection.rollback();
     console.error('Error saving resume:', error);
-    res.status(500).json({ error: 'Failed to save resume' });
+    res.status(500).json({
+     error: 'Failed to save resume',
+     details: error.message
+     });
   } finally {
     connection.release();
   }
@@ -108,11 +111,14 @@ app.get('/api/resume', async (req, res) => {
       projects: projectRows
     });
   } catch (error) {
-    console.error('Error fetching resume:', error);
-    res.status(500).json({ error: 'Failed to fetch resume' });
-  }
+  console.error('Error fetching resume:', error);
+  res.status(500).json({
+    error: 'Failed to fetch resume',
+    details: error.message
+  });
+}
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
