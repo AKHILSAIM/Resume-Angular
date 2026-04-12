@@ -19,7 +19,7 @@ export class ResumeViewComponent implements OnInit {
   }
 
   loadResume() {
-    this.http.get('http://localhost:3000/api/resume').subscribe({
+    this.http.get('https://resume-angular-production.up.railway.app/api/resume').subscribe({
       next: (response: any) => {
         this.fetchedResume = response;
       },

@@ -38,7 +38,7 @@ export class ResumeFormComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   saveResume() {
-    this.http.post('http://localhost:3000/api/resume', this.resumeData).subscribe({
+    this.http.post('https://resume-angular-production.up.railway.app/api/resume', this.resumeData).subscribe({
       next: () => {
         alert('Resume saved successfully');
         this.router.navigate(['/view']);
